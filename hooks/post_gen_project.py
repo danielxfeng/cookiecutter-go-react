@@ -2,6 +2,7 @@
 import json
 import os
 import shutil
+import subprocess
 from pathlib import Path
 
 
@@ -36,3 +37,14 @@ if __name__ == "__main__":
     if not _truthy(include_go_backend):
         _remove_backend_go()
         _strip_go_lint_staged()
+
+    init_git = "{{ cookiecutter.init_git }}"
+    if _truthy(init_git):
+        subprocess.run(["git", "init"], check=False)
+
+    print("\nNext steps:")
+    print("  cd {{ cookiecutter.project_slug }}")
+    print("  pnpm install")
+    print("  pnpm --filter frontend dev")
+    if _truthy(include_go_backend):
+        print("  pnpm --filter backend-go dev")

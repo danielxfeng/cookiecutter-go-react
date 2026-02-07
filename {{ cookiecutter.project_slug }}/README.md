@@ -20,6 +20,15 @@
 pnpm install
 ```
 
+{% if cookiecutter.init_git == "no" -%}
+**Git**
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+{% endif -%}
 **Run**
 Frontend dev server:
 ```bash
