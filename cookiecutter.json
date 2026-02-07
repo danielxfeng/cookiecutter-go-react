@@ -1,0 +1,9 @@
+{
+  "project_name": "my-project",
+  "project_slug": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
+  "author_name": "Daniel",
+  "github_username": "danielxfeng",
+  "description": "Full stack website with React frontend and optional Go backend",
+  "license": "MIT",
+  "include_go_backend": ["yes", "no"]
+}
