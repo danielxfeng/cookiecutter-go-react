@@ -32,7 +32,7 @@ def _strip_go_lint_staged() -> None:
 
 
 if __name__ == "__main__":
-    include_go_backend = os.environ.get("COOKIECUTTER_INCLUDE_GO_BACKEND", "")
+    include_go_backend = "{{ cookiecutter.include_go_backend }}"
     if not _truthy(include_go_backend):
         _remove_backend_go()
         _strip_go_lint_staged()
