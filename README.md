@@ -1,6 +1,6 @@
 # cookiecutter-go-react
 
-Cookiecutter template for a full stack React (Vite) frontend with an optional Go backend (Gin or Chi).
+Cookiecutter template for a full stack React (Vite) frontend with an optional Go backend (Chi or Gin).
 
 **Quickstart**
 ```bash
