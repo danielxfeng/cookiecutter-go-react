@@ -29,6 +29,10 @@
     "apps/backend-go/**/*.go": [
       "cd apps/backend-go && golangci-lint run --fix",
       "cd apps/backend-go && gofmt -w ."
+    ],
+    "apps/backend-chi/**/*.go": [
+      "cd apps/backend-chi && golangci-lint run --fix",
+      "cd apps/backend-chi && gofmt -w ."
     ]
   }
 }
