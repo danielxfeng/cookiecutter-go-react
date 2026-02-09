@@ -11,8 +11,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/danielxfeng/quick-agent-factory/apps/backend-chi/internal/api/router"
-	"github.com/danielxfeng/quick-agent-factory/apps/backend-chi/internal/dep"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/api/router"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/dep"
 	"github.com/joho/godotenv"
 )
 

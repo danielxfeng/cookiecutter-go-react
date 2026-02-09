@@ -5,8 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/danielxfeng/quick-agent-factory/apps/backend-chi/internal/api/util"
-	"github.com/danielxfeng/quick-agent-factory/apps/backend-chi/internal/dep"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/api/mymiddleware"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/api/util"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/dep"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
@@ -40,7 +41,8 @@ func getCorsOptions(cfg *dep.Config) cors.Options {
 func NewRouter(dep *dep.Dep) http.Handler {
 	r := chi.NewRouter()
 
-	r.Use(httplog.RequestLogger(dep.Logger, logOptions))
+	r.Use(httplog.RequestLogger(dep.Logger, logOptions)) // It recovers panic
+	r.Use(mymiddleware.Helmet())
 	// r.Use(middleware.RealIP) enable if behind a proxy
 	r.Use(middleware.RequestID)
 	r.Use(middleware.CleanPath)

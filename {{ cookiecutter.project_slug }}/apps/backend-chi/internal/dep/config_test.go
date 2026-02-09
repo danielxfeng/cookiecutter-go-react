@@ -3,7 +3,7 @@ package dep_test
 import (
 	"testing"
 
-	"github.com/danielxfeng/quick-agent-factory/apps/backend-chi/internal/dep"
+	"github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/apps/backend-chi/internal/dep"
 )
 
 const testKey = "TEST_KEY"
