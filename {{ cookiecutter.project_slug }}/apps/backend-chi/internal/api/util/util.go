@@ -30,13 +30,15 @@ func ParseAndValidateJSON[T any](r *http.Request, validateFn func(*T) error) (T,
 }
 
 func SendJSON[T any](w http.ResponseWriter, status int, data T) {
+	payload, err := json.Marshal(data)
+	if err != nil {
+		SendError(w, apierror.NewApiError(500, "failed to serialize the response", err))
+		return
+	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
-
-	// It would be a 500 so recovery handles the rest.
-	if err := json.NewEncoder(w).Encode(data); err != nil {
-		panic(err)
-	}
+	_, _ = w.Write(payload)
 }
 
 func SendError(w http.ResponseWriter, err error) {
