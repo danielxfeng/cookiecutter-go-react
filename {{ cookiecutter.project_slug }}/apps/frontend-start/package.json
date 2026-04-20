@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "typecheck": "tsc --noEmit",
-    "precommit": "pnpm run lint && pnpm run format && pnpm run test"
+    "precommit": "pnpm run lint && pnpm run format && pnpm run typecheck"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
