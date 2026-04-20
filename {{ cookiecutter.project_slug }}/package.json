@@ -26,6 +26,15 @@
     "**/*.{ts,tsx,js,json,md,yml,yaml}": [
       "prettier --write --ignore-unknown"
     ],
+    "apps/frontend/**/*.{ts,tsx,js,jsx,css}": [
+      "cd apps/frontend && pnpm run precommit"
+    ],
+    "apps/frontend-start/**/*.{ts,tsx,js,jsx,css}": [
+      "cd apps/frontend-start && pnpm run precommit"
+    ],
+    "packages/schemas/**/*.{ts,tsx,js,jsx,json}": [
+      "cd packages/schemas && pnpm run precommit"
+    ],
     "apps/backend-go/**/*.go": [
       "cd apps/backend-go && golangci-lint run --fix",
       "cd apps/backend-go && gofmt -w ."

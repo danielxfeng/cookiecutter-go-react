@@ -5,6 +5,7 @@
   "github_username": "danielxfeng",
   "description": "Full stack website with React frontend and optional Go backend",
   "license": "MIT",
+  "frontend_framework": ["react-router", "react-start"],
   "go_backend": ["gin", "chi", "none"],
   "init_git": ["no", "yes"]
 }

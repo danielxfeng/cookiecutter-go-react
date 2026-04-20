@@ -3,7 +3,11 @@
 {{ cookiecutter.description }}
 
 **Stack**
-- React (Vite) frontend
+{% if cookiecutter.frontend_framework == "react-router" -%}
+- React Router frontend
+{% elif cookiecutter.frontend_framework == "react-start" -%}
+- React Start frontend
+{% endif -%}
 {% if cookiecutter.go_backend == "gin" -%}
 - Go backend (Gin)
 {% elif cookiecutter.go_backend == "chi" -%}
@@ -34,7 +38,11 @@ git commit -m "Initial commit"
 **Run**
 Frontend dev server:
 ```bash
+{% if cookiecutter.frontend_framework == "react-router" -%}
 pnpm --filter frontend dev
+{% elif cookiecutter.frontend_framework == "react-start" -%}
+pnpm --filter start-app dev
+{% endif -%}
 ```
 
 {% if cookiecutter.go_backend == "gin" -%}
