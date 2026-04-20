@@ -36,6 +36,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        {% raw %}
         <TanStackDevtools
           config={{
             position: 'bottom-right',
@@ -47,6 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             },
           ]}
         />
+        {% endraw %}
         <Scripts />
       </body>
     </html>
